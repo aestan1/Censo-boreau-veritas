@@ -1,0 +1,229 @@
+<resources>
+    <string name="app_name">Censo de carga</string>
+    <string name="action_settings">Settings</string>
+    <string name="titulo">AGREGAR ITEM</string>
+    <string name="cantidad">Cantidad</string>
+    <string name="agregar">Agregar</string>
+    <string name="alumbrado">Alumbrado</string>
+    <string name="climatizacion">Climatización</string>
+    <string name="cocina">Cocina</string>
+    <string name="electrodomesticos">Electrodomesticos</string>
+    <string name="comercial">Comercial</string>
+    <string name="industrial">Industrial</string>
+    <string name="tvysonido">Tv y sonido</string>
+    <string name="foco60">Foco (Bombillo) 60w</string>
+    <string name="foco100">Foco (Bombillo) 100w</string>
+    <string name="lampara20">Lámpara fluorescente 20w</string>
+    <string name="lampara40">Lámpara Fluorescente 40w</string>
+    <string name="lampara75">Lámpara fluorescente 75w</string>
+    <string name="lampara96">Lámpara fluorescente 96w</string>
+    <string name="abanicoTecho">Abanico de techo</string>
+    <string name="abanicoMesa">Abanico de mesa</string>
+    <string name="abanicoPattonPeq">Abanico patton pequeño</string>
+    <string name="abanicoPattonGra">Abanico patton grande</string>
+    <string name="aa34">Aire acondiciondo 3/4 HP</string>
+    <string name="aa1">Aire acondicionado 1 HP</string>
+    <string name="aa15">Aire acondicionado 1.5 HP</string>
+    <string name="aa2">Aire acondicionado 2 HP</string>
+    <string name="calentador">Calentador</string>
+    <string name="seleccionecat">Seleccione una categoria...</string>
+    <string name="seleccioneItem">Seleccione un item...</string>
+
+    <string name="estufa1">Estufa 1 hornilla</string>
+    <string name="estufa2">Estufa 2 hornilla</string>
+    <string name="estufa3">Estufa 3 hornilla</string>
+    <string name="estufa4">Estufa 4 hornilla</string>
+    <string name="neveraP">Nevera pequeña</string>
+    <string name="neveraM">Nevera mediana</string>
+    <string name="neveraG">Nevera grande</string>
+    <string name="hornoE">Horno eléctrico</string>
+    <string name="hornoM">Horno microondas</string>
+    <string name="batidora">Batidora</string>
+    <string name="lavaplatos">Lavador platos automática</string>
+    <string name="licuadora">Licuadora</string>
+    <string name="exprimidor">Exprimidor</string>
+    <string name="tostadora">Tostadora de pan</string>
+    <string name="trituradora">Trituradora</string>
+
+    <string name="lavadoraP">Lavadora de ropa pequeña</string>
+    <string name="lavadoraG">Lavadora de ropa grande</string>
+    <string name="secadora">Secadora de ropa</string>
+    <string name="plancha">Plancha</string>
+    <string name="aspiradora">Aspiradora</string>
+    <string name="maquinaCoser">Máquina de coser</string>
+    <string name="secadorPelo">Secador de pelo</string>
+
+    <string name="registradora">Registradora</string>
+    <string name="congeladorP">Congelador pequeño</string>
+    <string name="congeladorG">Congelador grande</string>
+    <string name="enfriador2">Enfriador 2 cuerpos</string>
+    <string name="enfriador3">Enfriador 3 cuerpos</string>
+    <string name="mostradorS">Nevera mostrador sencilla</string>
+    <string name="mostradorD">Nevera mostrador doble</string>
+    <string name="botelleroP">Botellero pequeño 7 pies</string>
+    <string name="botelleroM">Botellero mediano 10 pies</string>
+    <string name="botelleroG">Botellero grande 19 pies</string>
+    <string name="vitrinaC">Vitrina Calentadora</string>
+    <string name="vitrinaE">Vitrina enfriadora</string>
+    <string name="cafetera">Cafetera</string>
+    <string name="asador">Asador</string>
+    <string name="waflera">Waflera</string>
+    <string name="fotocopiadoraP">Fotocopiadora pequeña</string>
+    <string name="fotocopiadoraG">Fotocopiadora grande</string>
+
+    <string name="soldador">Soldador</string>
+    <string name="taladro">Taladro</string>
+    <string name="brilladora">Brilladora</string>
+    <string name="motobomba1">Motobomba 1 HP</string>
+    <string name="motobomba15">Motobomba 1.5 HP</string>
+    <string name="motobomba2">Motobomba 2 HP</string>
+
+
+    <string name="tvP">Televisor pequeño</string>
+    <string name="tvG">Televisor grande</string>
+    <string name="tvL19">Televisor LCD 19</string>
+    <string name="tvL26">Televisor LCD 26</string>
+    <string name="tvL32">Televisor LCD 32</string>
+    <string name="tvP32">Televisor PLASMA 32</string>
+    <string name="tvP47">Televisor PLASMA 47</string>
+    <string name="pc">Computador</string>
+    <string name="radio">Radio</string>
+    <string name="video">Video</string>
+    <string name="dvd">Reproductor DVD</string>
+    <string name="grabadora">Grabadora</string>
+    <string name="equipo">Equipo de sonido</string>
+    <string name="impresora">Impresora residencial</string>
+    <string name="diligenciar">Diligenciar</string>
+
+
+    <string-array name="cat">
+        <item>@string/seleccionecat</item>
+        <item>@string/alumbrado</item>
+        <item>@string/climatizacion</item>
+        <item>@string/cocina</item>
+        <item>@string/electrodomesticos</item>
+        <item>@string/comercial</item>
+        <item>@string/industrial</item>
+        <item>@string/tvysonido</item>
+    </string-array>
+
+    <string-array name="itemVacio">
+        <item>@string/seleccioneItem</item>
+    </string-array>
+
+    <string-array name="itemAlumbrado">
+        <item>@string/foco60</item>
+        <item>@string/foco100</item>
+        <item>@string/lampara20</item>
+        <item>@string/lampara40</item>
+        <item>@string/lampara75</item>
+        <item>@string/lampara96</item>
+    </string-array>
+
+    <string-array name="itemClimatizacion">
+        <item>@string/abanicoTecho</item>
+        <item>@string/abanicoMesa</item>
+        <item>@string/abanicoPattonPeq</item>
+        <item>@string/abanicoPattonGra</item>
+        <item>@string/aa34</item>
+        <item>@string/aa1</item>
+        <item>@string/aa15</item>
+        <item>@string/aa2</item>
+        <item>@string/calentador</item>
+    </string-array>
+
+    <string-array name="itemCocina">
+        <item>@string/estufa1 </item>
+        <item>@string/estufa2 </item>
+        <item>@string/estufa3 </item>
+        <item>@string/estufa4 </item>
+        <item>@string/neveraP </item>
+        <item>@string/neveraM </item>
+        <item>@string/neveraG </item>
+        <item>@string/hornoE </item>
+        <item>@string/hornoM </item>
+        <item>@string/batidora </item>
+        <item>@string/lavaplatos </item>
+        <item>@string/licuadora </item>
+        <item>@string/exprimidor </item>
+        <item>@string/tostadora </item>
+        <item>@string/trituradora </item>
+    </string-array>
+
+    <string-array name="itemElectrodomesticos">
+        <item>@string/lavadoraP </item>
+        <item>@string/lavadoraG </item>
+        <item>@string/secadora </item>
+        <item>@string/plancha </item>
+        <item>@string/aspiradora </item>
+        <item>@string/maquinaCoser </item>
+        <item>@string/secadorPelo </item>
+    </string-array>
+
+    <string-array name="itemComercial">
+        <item>@string/registradora </item>
+        <item>@string/congeladorP </item>
+        <item>@string/congeladorG </item>
+        <item>@string/enfriador2 </item>
+        <item>@string/enfriador3 </item>
+        <item>@string/mostradorS </item>
+        <item>@string/mostradorD </item>
+        <item>@string/botelleroP </item>
+        <item>@string/botelleroM </item>
+        <item>@string/botelleroG </item>
+        <item>@string/vitrinaC </item>
+        <item>@string/vitrinaE </item>
+        <item>@string/cafetera </item>
+        <item>@string/asador </item>
+        <item>@string/waflera </item>
+        <item>@string/fotocopiadoraP </item>
+        <item>@string/fotocopiadoraG </item>
+
+    </string-array>
+
+    <string-array name="itemIndustrial">
+        <item>@string/soldador </item>
+        <item>@string/taladro </item>
+        <item>@string/brilladora </item>
+        <item>@string/motobomba1 </item>
+        <item>@string/motobomba15 </item>
+        <item>@string/motobomba2 </item>
+    </string-array>
+
+
+    <string-array name="itemTvS">
+        <item>@string/tvP </item>
+        <item>@string/tvG </item>
+        <item>@string/tvL19 </item>
+        <item>@string/tvL26 </item>
+        <item>@string/tvL32 </item>
+        <item>@string/tvP32 </item>
+        <item>@string/tvP47 </item>
+        <item>@string/pc </item>
+        <item>@string/radio </item>
+        <item>@string/video </item>
+        <item>@string/dvd </item>
+        <item>@string/grabadora </item>
+        <item>@string/equipo </item>
+        <item>@string/impresora </item>
+    </string-array>
+    <string name="mensaje1">Item agregado exitosamente</string>
+    <string name="resultado">Resultado</string>
+    <string name="censoReportado">Censo reportado (w)</string>
+    <string name="censoTotal">Censo total (w)</string>
+    <string name="evaluar">Evaluar</string>
+    <string name="desviacion">Desviacion (w)</string>
+    <string name="auditor">Auditor:</string>
+    <string name="ciudad">Ciudad:</string>
+    <string name="nic">Nic:</string>
+    <string name="orden">Orden de servicio:</string>
+    <string name="censoDictado">Censo (dictado/verificado):</string>
+    <string name="censoRep">Censo reportado (w):</string>
+    <string name="usuario">Nombre usuario:</string>
+    <string name="observaciones">Observaciones:</string>
+    <string name="title_activity_calculador">Calculador</string>
+    <string name="error1">Debe llenar este campo</string>
+    <string name="error2">El valor debe ser minimo 1</string>
+    <string name="error3">Debe elegir una categoria</string>
+
+</resources>
