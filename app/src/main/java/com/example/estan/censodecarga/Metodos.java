@@ -10,14 +10,29 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Date;
 
+import jxl.Cell;
+import jxl.CellFeatures;
+import jxl.CellType;
 import jxl.Workbook;
 import jxl.WorkbookSettings;
+import jxl.format.Alignment;
+import jxl.format.Border;
+import jxl.format.BorderLineStyle;
+import jxl.format.CellFormat;
+import jxl.format.Colour;
+import jxl.format.Font;
 import jxl.format.Format;
+import jxl.format.Pattern;
+import jxl.format.UnderlineStyle;
 import jxl.write.Label;
 import jxl.write.Number;
+import jxl.write.WritableCell;
+import jxl.write.WritableCellFeatures;
+import jxl.write.WritableCellFormat;
+import jxl.write.WritableFont;
 import jxl.write.WritableSheet;
 import jxl.write.WritableWorkbook;
-
+import jxl.write.WriteException;
 /**
  * Created by Estan on 19/12/2017.
  */
@@ -68,7 +83,7 @@ public class Metodos {
         if(itemem.equalsIgnoreCase("Congelador pequeño"))w=250;
         if(itemem.equalsIgnoreCase("Congelador grande"))w=417;
         if(itemem.equalsIgnoreCase("Enfriador 2 cuerpos"))w=987;
-        if(itemem.equalsIgnoreCase("Enfriador 3 cuerpo"))w=2831;
+        if(itemem.equalsIgnoreCase("Enfriador 3 cuerpos"))w=2831;
         if(itemem.equalsIgnoreCase("Nevera mostrador sencilla"))w=426;
         if(itemem.equalsIgnoreCase("Nevera mostrador doble"))w=776;
         if(itemem.equalsIgnoreCase("Botellero pequeño 7 pies"))w=303;
@@ -313,8 +328,8 @@ public class Metodos {
     public static void escribirXls (ArrayList<Celda> celdas, Context context){
         celdas=listaCeldas.obtener();
         File sd = Environment.getExternalStorageDirectory();
-        String in = "/sdcard/test.xls";
-        String out = "/sdcard/test2.xls";
+        String in = "/sdcard/Download/plantilla.xls";
+        String out = "/sdcard/Download/CensoFinal.xls";
         File in_file = new File(in);
         File out_file = new File(out);
 
@@ -325,14 +340,31 @@ public class Metodos {
             settings.setEncoding("iso-8859-1");
             Workbook workbook = Workbook.getWorkbook(in_file,settings);
             WritableWorkbook copyWorkbook = workbook.createWorkbook(out_file, workbook);
+
             workbook.close();
             WritableSheet sheet = copyWorkbook.getSheet(0);
+           WritableCellFormat format1 = new WritableCellFormat();
+           format1.setBorder(Border.ALL, BorderLineStyle.MEDIUM);
+            WritableCellFormat format2 = new WritableCellFormat();
+            format2.setBorder(Border.ALL, BorderLineStyle.THIN);
+            format2.setAlignment(Alignment.CENTRE);
+
+
+
+
+
+
             for (int i = 0; i < celdas.size(); i++) {
+                Label label = new Label(celdas.get(i).getColumna(), celdas.get(i).getFila(), celdas.get(i).getDato(), format1);
+                Label label2 = new Label(celdas.get(i).getColumna(), celdas.get(i).getFila(), celdas.get(i).getDato(), format2);
                 if(celdas.get(i).getEsNumero()==true) {
-                    sheet.addCell(new Number(celdas.get(i).getColumna(), celdas.get(i).getFila(), Double.parseDouble(celdas.get(i).getDato())));
+                    sheet.addCell(label2);
                 }else{
-                    sheet.addCell(new Label(celdas.get(i).getColumna(), celdas.get(i).getFila(), celdas.get(i).getDato()));
+                    sheet.addCell(label);
                 }
+
+
+
 
 
             }
@@ -340,13 +372,21 @@ public class Metodos {
             copyWorkbook.close();
 
 
-            Toast.makeText(context, "Datos Actualizados", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Archivo generado con exito", Toast.LENGTH_SHORT).show();
 
         } catch (Exception e) {
             e.printStackTrace();
-            Toast.makeText(context, "No encuentro el archivo", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "No encuentro la plantilla", Toast.LENGTH_SHORT).show();
         }
 
+    }
+
+    private static WritableCellFormat getCellFormat(Colour colour, Pattern pattern) throws WriteException {
+        WritableFont cellFont = new WritableFont(WritableFont.TIMES, 16);
+        cellFont.setColour(Colour.WHITE);
+        WritableCellFormat cellFormat = new WritableCellFormat(cellFont);
+        cellFormat.setBackground(colour, pattern);
+        return cellFormat;
     }
 
     public static boolean validar_aux(TextView t, String mensaje) {

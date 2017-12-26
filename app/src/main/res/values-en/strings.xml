@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Charge Census</string>
+    <string name="action_settings">Settings</string>
+    <string name="titulo">ADD ITEM</string>
+    <string name="cantidad">Quantity</string>
+    <string name="agregar">Add</string>
+    <string name="alumbrado">Lighting</string>
+    <string name="climatizacion">Air conditioning</string>
+    <string name="cocina">Kitchen</string>
+    <string name="electrodomesticos">Home appliances</string>
+    <string name="comercial">Commercial</string>
+    <string name="industrial">Industrial</string>
+    <string name="tvysonido">Tv and sound</string>
+    <string name="foco60">Spotlight (Bulb) 60w</string>
+    <string name="foco100">Spotlight (Bulb) 100w</string>
+    <string name="lampara20">Fluorescent lamp 20w</string>
+    <string name="lampara40">Fluorescent lamp 40w</string>
+    <string name="lampara75">Fluorescent lamp 75w</string>
+    <string name="lampara96">Fluorescent lamp 96w</string>
+</resources>

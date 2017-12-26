@@ -92,16 +92,16 @@ public class Form extends AppCompatActivity {
             celdas.add(new Celda(3, 5, nic, false));
             celdas.add(new Celda(4, 5, orden, false));
             celdas.add(new Celda(5, 5, tipo, false));
-            celdas.add(new Celda(6, 5, report, true));
+            celdas.add(new Celda(6, 5, report, false));
             celdas.add(new Celda(51, 5, user, false));
             celdas.add(new Celda(55, 1, obs, false));
             celdas.add(new Celda(51, 1, tot, true));
-            celdas.add(new Celda(52, 1, res, false));
+            celdas.add(new Celda(52, 1, res, true));
             celdas.add(new Celda(53, 1, desv, true));
 
 
 
-            Toast.makeText(this, "estoy llamando", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Procesando", Toast.LENGTH_SHORT).show();
             Metodos.escribirXls(celdas, this);
         }
     }

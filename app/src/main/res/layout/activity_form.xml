@@ -68,7 +68,6 @@
                         android:ems="10"
                         android:hint="@string/auditor"
                         android:inputType="textPersonName"
-                        android:text="andres"
                         android:textAlignment="viewStart" />
                 </android.support.design.widget.TextInputLayout>
 
@@ -84,7 +83,6 @@
                         android:ems="10"
                         android:hint="@string/ciudad"
                         android:inputType="textPersonName"
-                        android:text="baq"
                         android:textAlignment="viewStart" />
                 </android.support.design.widget.TextInputLayout>
 
@@ -100,7 +98,6 @@
                         android:ems="10"
                         android:hint="@string/nic"
                         android:inputType="number"
-                        android:text="123"
                         android:textAlignment="viewStart" />
                 </android.support.design.widget.TextInputLayout>
 
@@ -116,7 +113,6 @@
                         android:ems="10"
                         android:hint="@string/orden"
                         android:inputType="number"
-                        android:text="123"
                         android:textAlignment="viewStart" />
                 </android.support.design.widget.TextInputLayout>
 
@@ -133,7 +129,6 @@
                         android:ems="10"
                         android:hint="@string/censoDictado"
                         android:inputType="textPersonName"
-                        android:text="dic"
                         android:textAlignment="viewStart" />
                 </android.support.design.widget.TextInputLayout>
 
@@ -214,7 +209,6 @@
                         android:ems="10"
                         android:hint="@string/usuario"
                         android:inputType="textPersonName"
-                        android:text="fula"
                         android:textAlignment="viewStart" />
                 </android.support.design.widget.TextInputLayout>
 
@@ -230,7 +224,6 @@
                         android:ems="10"
                         android:hint="@string/observaciones"
                         android:inputType="textMultiLine"
-                        android:text="tramullero"
                         android:textAlignment="viewStart" />
                 </android.support.design.widget.TextInputLayout>
             </LinearLayout>
