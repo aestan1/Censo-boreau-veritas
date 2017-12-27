@@ -116,20 +116,17 @@
                         android:textAlignment="viewStart" />
                 </android.support.design.widget.TextInputLayout>
 
+                <Spinner
+                    android:id="@+id/cmbTipoCenso"
+                    style="@style/Widget.AppCompat.Spinner.DropDown"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="10dp" />
+
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <EditText
-                        android:id="@+id/txtTipoCenso"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:autoText="false"
-                        android:ems="10"
-                        android:hint="@string/censoDictado"
-                        android:inputType="textPersonName"
-                        android:textAlignment="viewStart" />
                 </android.support.design.widget.TextInputLayout>
 
                 <android.support.design.widget.TextInputLayout

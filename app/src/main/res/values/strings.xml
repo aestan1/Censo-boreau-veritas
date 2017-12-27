@@ -190,6 +190,11 @@
         <item>@string/motobomba2 </item>
     </string-array>
 
+    <string-array name="tipoCenso">
+        <item>@string/elija </item>
+        <item>@string/dictado </item>
+        <item>@string/verificado </item>
+    </string-array>
 
     <string-array name="itemTvS">
         <item>@string/tvP </item>
@@ -208,6 +213,7 @@
         <item>@string/impresora </item>
     </string-array>
     <string name="mensaje1">Item agregado exitosamente</string>
+    <string name="mensaje2">Item agregado exitosamente</string>
     <string name="resultado">Resultado</string>
     <string name="censoReportado">Censo reportado (w)</string>
     <string name="censoTotal">Censo total (w)</string>
@@ -225,5 +231,9 @@
     <string name="error1">Debe llenar este campo</string>
     <string name="error2">El valor debe ser minimo 1</string>
     <string name="error3">Debe elegir una categoria</string>
+    <string name="error4">Debe elegir un tipo de censo</string>
+    <string name="elija">Seleccione un tipo de censo</string>
+    <string name="dictado">Censo dictado</string>
+    <string name="verificado">Censo verificado</string>
 
 </resources>

@@ -3,6 +3,7 @@ package com.example.estan.censodecarga;
 import android.content.Context;
 import android.os.Environment;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -398,13 +399,32 @@ public class Metodos {
         return false;
     }
 
-    public static boolean validar_cero(TextView t, String mensaje) {
-        if (Integer.parseInt(t.getText().toString())==0){
+    public static boolean validar_spiner(Spinner s) {
+        if (s.getSelectedItemPosition()==0){
+            s.requestFocus();
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean validar_os(TextView t, String mensaje) {
+        if (t.getText().length()!=8){
             t.requestFocus();
             t.setError(mensaje);
             return true;
         }
         return false;
     }
+
+    public static boolean validar_nic(TextView t, String mensaje) {
+        if (t.getText().length()!=7){
+            t.requestFocus();
+            t.setError(mensaje);
+            return true;
+        }
+        return false;
+    }
+
+
 
 }

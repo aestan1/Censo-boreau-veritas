@@ -9,7 +9,9 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 
@@ -31,8 +33,10 @@ public class Form extends AppCompatActivity {
     private ArrayList<Aparato> aparatos;
     private Intent i;
     private Bundle b;
-    private EditText txtAuditor, txtCiudad,txtNic, txtOrden, txtTipoCenso, txtCensoReport, txtTotal,
+    private EditText txtAuditor, txtCiudad,txtNic, txtOrden,  txtCensoReport, txtTotal,
             txtResultado, txtDesviacion, txtUsuario, txtObservaciones;
+    private Spinner cmbTipoCenso;
+    private String[] tipoCenso;
     private Resources r;
     String auditor, ciudad, nic, orden, tipo, report, tot, res, desv, user, obs, resu, desvi, rep;
     @Override
@@ -42,7 +46,7 @@ public class Form extends AppCompatActivity {
         r=this.getResources();
         aparatos=Datos.obtener();
         b = getIntent().getExtras();
-
+        tipoCenso = r.getStringArray(R.array.tipoCenso);
         resu = b.getString("res");
         desvi=b.getString("des");
         rep=b.getString("rep");
@@ -51,7 +55,7 @@ public class Form extends AppCompatActivity {
         txtCiudad=findViewById(R.id.txtCiudad);
         txtNic=findViewById(R.id.txtNic);
         txtOrden=findViewById(R.id.txtOrden);
-        txtTipoCenso=findViewById(R.id.txtTipoCenso);
+        cmbTipoCenso=findViewById(R.id.cmbTipoCenso);
         txtCensoReport=findViewById(R.id.txtCensoReport);
         txtTotal=findViewById(R.id.txtTotal);
         txtResultado=findViewById(R.id.txtResultado);
@@ -59,6 +63,8 @@ public class Form extends AppCompatActivity {
         txtUsuario=findViewById(R.id.txtUsuario);
         txtObservaciones=findViewById(R.id.txtObservaciones);
 
+        ArrayAdapter<CharSequence> adapterTipo =  ArrayAdapter.createFromResource(this, R.array.tipoCenso, android.R.layout.simple_spinner_item);
+        cmbTipoCenso.setAdapter(adapterTipo);
         int totalizador = Metodos.totalizador();
         //if(totalizador!=0) {
             txtTotal.setText(""+totalizador);
@@ -79,7 +85,7 @@ public class Form extends AppCompatActivity {
             ciudad = "" + txtCiudad.getText();
             nic = "" + txtNic.getText();
             orden = "" + txtOrden.getText();
-            tipo = "" + txtTipoCenso.getText();
+            tipo = "" + cmbTipoCenso.getSelectedItem();
             report = "" + txtCensoReport.getText();
             tot=""+txtTotal.getText();
             res=""+txtResultado.getText();
@@ -108,13 +114,21 @@ public class Form extends AppCompatActivity {
 
     public boolean validar() {
         String aux = r.getString(R.string.error1);
+        String mensajeOs = "La O.S. debe ser de 8 digitos";
+        String mensajeNic = "El Nic debe ser de 7 digitos";
         if (Metodos.validar_aux(txtAuditor, aux)) return false;
         else if (Metodos.validar_aux(txtCiudad, aux)) return false;
         else if (Metodos.validar_aux(txtNic, aux)) return false;
+        else if (Metodos.validar_nic(txtNic, mensajeNic)) return false;
         else if (Metodos.validar_aux(txtOrden, aux)) return false;
-        else if (Metodos.validar_aux(txtTipoCenso, aux)) return false;
+        else if (Metodos.validar_os(txtOrden, mensajeOs)) return false;
+        else if (Metodos.validar_spiner(cmbTipoCenso)){
+            Toast.makeText(this, R.string.error4, Toast.LENGTH_SHORT).show();
+            return false;
+        }
         else if (Metodos.validar_aux(txtUsuario, aux)) return false;
         else if (Metodos.validar_aux(txtObservaciones, aux)) return false;
+
         return true;
 
     }
