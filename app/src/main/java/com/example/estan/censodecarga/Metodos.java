@@ -326,11 +326,13 @@ public class Metodos {
     }
 
 
-    public static void escribirXls (ArrayList<Celda> celdas, Context context){
+    public static void escribirXls (ArrayList<Celda> celdas, Context context, String fullpath){
         celdas=listaCeldas.obtener();
         File sd = Environment.getExternalStorageDirectory();
-        String in = "/sdcard/Download/plantilla.xls";
-        String out = "/sdcard/Download/CensoFinal.xls";
+        String path = fullpath.substring(0,fullpath.length()-13);
+        String in = fullpath;
+
+        String out = path+"CensoFinal.xls";
         File in_file = new File(in);
         File out_file = new File(out);
 
@@ -349,9 +351,6 @@ public class Metodos {
             WritableCellFormat format2 = new WritableCellFormat();
             format2.setBorder(Border.ALL, BorderLineStyle.THIN);
             format2.setAlignment(Alignment.CENTRE);
-
-
-
 
 
 

@@ -24,9 +24,20 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentEnd="true"
-                android:backgroundTint="@color/colorSecondaryText"
-                android:onClick="generar"
+                android:backgroundTint="@android:color/transparent"
+                android:onClick="seleccionar_plantilla"
                 app:srcCompat="@drawable/xls" />
+
+            <ImageButton
+                android:id="@+id/btnGuardar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="36dp"
+                android:backgroundTint="@android:color/transparent"
+                android:onClick="generar"
+                app:srcCompat="@drawable/guardar" />
         </RelativeLayout>
 
         <android.support.v7.widget.Toolbar
@@ -49,6 +60,7 @@
             tools:context="com.example.estan.censodecarga.Form">
 
             <LinearLayout
+                android:id="@+id/layoutForm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -222,7 +234,9 @@
                         android:hint="@string/observaciones"
                         android:inputType="textMultiLine"
                         android:textAlignment="viewStart" />
+
                 </android.support.design.widget.TextInputLayout>
+
             </LinearLayout>
         </ScrollView>
     </android.support.v4.widget.NestedScrollView>

@@ -1,8 +1,10 @@
 package com.example.estan.censodecarga;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,6 +13,8 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -38,6 +42,10 @@ public class Form extends AppCompatActivity {
     private Spinner cmbTipoCenso;
     private String[] tipoCenso;
     private Resources r;
+    private Uri uri;
+    private LinearLayout layoutForm;
+    private ImageButton btnGuardar;
+    private String FullPath;
     String auditor, ciudad, nic, orden, tipo, report, tot, res, desv, user, obs, resu, desvi, rep;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +58,8 @@ public class Form extends AppCompatActivity {
         resu = b.getString("res");
         desvi=b.getString("des");
         rep=b.getString("rep");
-
+        layoutForm=findViewById(R.id.layoutForm);
+        btnGuardar=findViewById(R.id.btnGuardar);
         txtAuditor=findViewById(R.id.txtAuditor);
         txtCiudad=findViewById(R.id.txtCiudad);
         txtNic=findViewById(R.id.txtNic);
@@ -74,10 +83,11 @@ public class Form extends AppCompatActivity {
         //}else{
           //  txtTotal.setText("0");
         //}
-
+        layoutForm.setVisibility(View.INVISIBLE);
+        btnGuardar.setVisibility(View.INVISIBLE);
     }
 
-    public void generar (View v){
+    public void generar (View r){
         if(validar()) {
             ArrayList<Celda> celdas;
             celdas = listaCeldas.obtener();
@@ -108,7 +118,7 @@ public class Form extends AppCompatActivity {
 
 
             Toast.makeText(this, "Procesando", Toast.LENGTH_SHORT).show();
-            Metodos.escribirXls(celdas, this);
+            Metodos.escribirXls(celdas, this, FullPath );
         }
     }
 
@@ -132,6 +142,41 @@ public class Form extends AppCompatActivity {
         return true;
 
     }
+
+    public void seleccionar_plantilla(View v){
+        Intent i = new Intent();
+        i.setType("document/*");
+        i.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(Intent.createChooser(i, "Ubique el archivo plantilla.xls"),1);
+
+    }
+    protected void onActivityResult(int requesCode, int resultCode, Intent data){
+        super.onActivityResult(requesCode,resultCode,data);
+        if(requesCode==1&&resultCode == RESULT_OK){
+            uri = data.getData();
+            if(uri!=null){
+                FullPath = uri.getPath();
+
+               // String path = fullpath.substring(0,fullpath.length()-13);
+                Toast.makeText(this, FullPath, Toast.LENGTH_SHORT).show();
+                layoutForm.setVisibility(View.VISIBLE);
+                btnGuardar.setVisibility(View.VISIBLE);
+            }else if (resultCode == Activity.RESULT_CANCELED){
+                Intent i = new Intent(this,Form.class);
+                startActivity(i);
+                finish();
+            }
+        }
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        Intent i = new Intent(Form.this,Resultado.class);
+        startActivity(i);
+        finish();
+    }
+
 
 
 }

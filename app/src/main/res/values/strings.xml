@@ -235,5 +235,6 @@
     <string name="elija">Seleccione un tipo de censo</string>
     <string name="dictado">Censo dictado</string>
     <string name="verificado">Censo verificado</string>
+    <string name="generar">Generar</string>
 
 </resources>
