@@ -326,16 +326,17 @@ public class Metodos {
     }
 
 
-    public static void escribirXls (ArrayList<Celda> celdas, Context context, String fullpath){
+    public static void escribirXls (ArrayList<Celda> celdas, Context context){
         celdas=listaCeldas.obtener();
         File sd = Environment.getExternalStorageDirectory();
-        String path = fullpath.substring(0,fullpath.length()-13);
-        String in = fullpath;
+       // String path = fullpath.substring(0,fullpath.length()-13);
+        String in = "/sdcard/Download/plantilla.xls";
 
-        String out = path+"CensoFinal.xls";
+        String out = "/sdcard/Download/CensoFinal.xls";
         File in_file = new File(in);
         File out_file = new File(out);
-
+        //Toast.makeText(context, path, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(context, fullpath, Toast.LENGTH_SHORT).show();
         try {
 
 

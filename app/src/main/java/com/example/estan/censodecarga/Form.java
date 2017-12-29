@@ -83,8 +83,8 @@ public class Form extends AppCompatActivity {
         //}else{
           //  txtTotal.setText("0");
         //}
-        layoutForm.setVisibility(View.INVISIBLE);
-        btnGuardar.setVisibility(View.INVISIBLE);
+        //layoutForm.setVisibility(View.INVISIBLE);
+        //btnGuardar.setVisibility(View.INVISIBLE);
     }
 
     public void generar (View r){
@@ -118,7 +118,7 @@ public class Form extends AppCompatActivity {
 
 
             Toast.makeText(this, "Procesando", Toast.LENGTH_SHORT).show();
-            Metodos.escribirXls(celdas, this, FullPath );
+            Metodos.escribirXls(celdas, this );
         }
     }
 
@@ -145,7 +145,7 @@ public class Form extends AppCompatActivity {
 
     public void seleccionar_plantilla(View v){
         Intent i = new Intent();
-        i.setType("document/*");
+        i.setType("*/*");
         i.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(Intent.createChooser(i, "Ubique el archivo plantilla.xls"),1);
 
@@ -155,7 +155,7 @@ public class Form extends AppCompatActivity {
         if(requesCode==1&&resultCode == RESULT_OK){
             uri = data.getData();
             if(uri!=null){
-                FullPath = uri.getPath();
+                FullPath = uri.toString();
 
                // String path = fullpath.substring(0,fullpath.length()-13);
                 Toast.makeText(this, FullPath, Toast.LENGTH_SHORT).show();
